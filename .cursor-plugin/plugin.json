@@ -2,7 +2,7 @@
   "name": "adplug",
   "displayName": "AdPlug: Google Ads, Meta Ads, LinkedIn Ads, Microsoft Ads",
   "version": "1.0.0",
-  "description": "Safely connect Google Ads, Meta Ads (in early access), LinkedIn Ads and Microsoft Ads so your agent can check campaigns, flag what needs attention and, on a paid plan, make the changes you approve.",
+  "description": "Safely connect Google Ads, LinkedIn Ads, Microsoft Ads and Meta Ads to Grok, Grok Bot and Cursor, so your agent can check campaigns, flag what needs attention and make the changes you approve. Built for PPC specialists, agencies and in-house teams.",
   "author": {
     "name": "AdPlug",
     "email": "support@adplug.app"
