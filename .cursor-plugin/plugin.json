@@ -1,8 +1,8 @@
 {
   "name": "adplug",
-  "displayName": "AdPlug: Google Ads, LinkedIn Ads, Microsoft Ads",
+  "displayName": "AdPlug: Google Ads, Meta Ads, LinkedIn Ads, Microsoft Ads",
   "version": "1.0.0",
-  "description": "Safely connect Google Ads, LinkedIn Ads and Microsoft Ads so your agent can check campaigns, flag what needs attention and, on a paid plan, make the changes you approve.",
+  "description": "Safely connect Google Ads, Meta Ads (in early access), LinkedIn Ads and Microsoft Ads so your agent can check campaigns, flag what needs attention and, on a paid plan, make the changes you approve.",
   "author": {
     "name": "AdPlug",
     "email": "support@adplug.app"
@@ -15,6 +15,9 @@
   "keywords": [
     "adplug",
     "google-ads",
+    "meta-ads",
+    "facebook-ads",
+    "instagram-ads",
     "linkedin-ads",
     "microsoft-ads",
     "microsoft-advertising",

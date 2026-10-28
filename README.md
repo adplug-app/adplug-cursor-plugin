@@ -1,6 +1,6 @@
 # AdPlug for Grok Bot and Cursor
 
-AdPlug is a hosted MCP server that safely connects Google Ads, LinkedIn Ads and Microsoft Ads to Grok Bot and Cursor.
+AdPlug is a hosted MCP server that safely connects Google Ads, Meta Ads (in early access), LinkedIn Ads and Microsoft Ads to Grok Bot and Cursor.
 
 Your agent can check campaigns, flag what needs attention and, on a paid plan, make the changes you approve.
 
@@ -41,8 +41,9 @@ The first time you connect, a browser tab opens on AdPlug's sign-in. Sign in, or
 
 ## What you need
 
-- An AdPlug account. The free plan connects one ad platform, comes with a monthly request limit and is view only: your agent can read your accounts and preview changes, but not apply them. A paid plan connects all three and lets the agent make changes: see [adplug.app/pricing](https://adplug.app/pricing).
-- Your ad accounts connected once in AdPlug, at [adplug.app/dashboard/connections](https://adplug.app/dashboard/connections), each with the platform's own sign-in (Google, LinkedIn or Microsoft).
+- An AdPlug account. The free plan connects one ad platform, comes with a monthly request limit and is view only: your agent can read your accounts and preview changes, but not apply them. A paid plan connects all four (Meta Ads once you have early access) and lets the agent make changes: see [adplug.app/pricing](https://adplug.app/pricing).
+- Your ad accounts connected once in AdPlug, at [adplug.app/dashboard/connections](https://adplug.app/dashboard/connections), each with the platform's own sign-in (Google, Meta, LinkedIn or Microsoft).
+- For Meta Ads, a place on AdPlug's early-access list while Meta reviews AdPlug's app. Until you're on it, the Connections page shows **Request access** instead of a Connect button, and the form asks for your Facebook profile link. If your agent tries a Meta tool first, AdPlug replies with the link to that form. Once AdPlug adds your profile as a tester and emails you, you connect Meta from the Connections page like the others.
 
 There's no API key or client ID to set up. Sign-in is OAuth 2.1 with dynamic client registration and PKCE.
 
@@ -54,6 +55,11 @@ Ask in plain words and the agent pulls the numbers itself (no exports, no CSVs, 
 
 - **Reads:** every account under a manager (MCC) account. Account, campaign, ad, keyword, bidding-strategy and Shopping product performance. Day-by-day trends and conversions by action. Search terms, Dynamic Search Ads included. Shared negative keyword lists, keyword ideas and search volumes from Keyword Planner, Google's own Recommendations, and any custom GAQL report.
 - **Changes:** pause, enable and remove. Budgets and bids. Negative keywords at campaign or shared-list level. New campaigns, ad groups, ads and assets. Apply or dismiss Google's Recommendations.
+
+### Meta Ads (Facebook and Instagram)
+
+- **Reads:** your ad accounts, Facebook Pages and linked Instagram accounts, in one call. Account, campaign, ad set and ad performance, with breakdowns by age and gender, placement, device and country, and your choice of attribution window. Campaigns, ad sets, ads, audiences, catalogues, product sets and lead forms. A delivery check that says why an ad isn't running and what to fix. Targeting search for interests, locations, job titles and more, with an audience size estimate. Meta's public Ad Library, to look up a competitor's ads. Meta's [Ad Library API](https://www.facebook.com/ads/library/api) only returns a commercial ad if it was shown in the EU, and Meta asks you to confirm your identity once before your first search.
+- **Changes:** create and edit campaigns, ad sets and ads. Pause, switch on, archive or delete them. Budgets, bids and spend caps. Custom audiences, lookalikes, catalogues, product sets, lead forms, automated rules, A/B tests and custom conversions. Meta won't take new ad copy or media from AdPlug until it approves AdPlug's app, so for now a new ad runs an existing creative or one of your Page's posts.
 
 ### LinkedIn Ads
 
@@ -82,9 +88,10 @@ AdPlug's HubSpot and Google Search Console connectors aren't part of this plugin
 Most of AdPlug's change tools come in pairs: a preview, which shows the exact change without making it, and an execute, which makes it.
 
 - **Google Ads:** AdPlug's server refuses a change that wasn't previewed first. The execute tool needs the preview's ID.
-- **LinkedIn Ads and Microsoft Ads:** the execute tool takes the same change as the preview, and AdPlug's tool descriptions tell the agent to preview first. That's an instruction to the agent, not a block on the server.
+- **Meta Ads, LinkedIn Ads and Microsoft Ads:** the execute tool takes the same change as the preview, and AdPlug's tool descriptions tell the agent to preview first (the Meta Ads ones also tell it to wait until you've confirmed). That's an instruction to the agent, not a block on the server.
 - **Two tools have no preview step:** Microsoft Ads bulk upload, whose description tells the agent to show you the file first, and LinkedIn's Conversions API upload, which sends conversion events.
 - New campaigns start paused (as drafts on LinkedIn Ads), and so do most new ads. On Google Ads, a new Dynamic Search Ad or Shopping product ad starts enabled unless the agent sets it to paused.
+- On Meta Ads, AdPlug's server creates every new campaign, ad set and ad paused, whatever the agent asks for. Each one spends nothing until it's switched on.
 - On the free plan, the change tools refuse to apply anything.
 - On Max and Agency plans, a team owner can set a teammate to View only for any platform. AdPlug then hides and blocks that platform's change tools for that teammate.
 - Grok Bot and Cursor can also ask you before a tool runs, depending on your settings.
