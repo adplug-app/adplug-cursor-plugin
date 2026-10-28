@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "adplug": {
+      "type": "http",
+      "url": "https://api.adplug.app/mcp"
+    }
+  }
+}
