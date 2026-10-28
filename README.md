@@ -101,7 +101,7 @@ Most of AdPlug's change tools come in pairs: a preview, which shows the exact ch
 
 Every tool call goes to one endpoint, `https://api.adplug.app/mcp`. Sign-in goes through AdPlug's pages on adplug.app and its sign-in provider, Supabase (named in api.adplug.app's OAuth metadata). The plugin adds no software and runs no scripts on your computer.
 
-Account data travels between your ad platforms and your agent through AdPlug's servers at api.adplug.app. Reports are fetched live and not kept. AdPlug logs each call's tool, ad account and time for your usage page, never its arguments or results, and keeps a Google Ads change preview for up to two days so it can be applied. Platform sign-in tokens are stored encrypted.
+Account data travels between your ad platforms and your agent through AdPlug's servers at api.adplug.app. Reports are fetched live and not kept. AdPlug logs each call's tool, ad account and time for your usage page, never its arguments or results, and keeps a Google Ads change preview so it can be applied within 15 minutes, then deletes it within two days. Platform sign-in tokens are stored encrypted.
 
 This repo holds the plugin manifest (`.cursor-plugin/plugin.json`), the server address (`mcp.json`), the logo, this README, a changelog and the licence.
 
